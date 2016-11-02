@@ -1,4 +1,4 @@
-let result = (function() {
+(function() {
     class TextBox {
         constructor(selector, invalidSymbols) {
             this.selector = selector;
@@ -65,12 +65,3 @@ let result = (function() {
         Form: Form
     }
 })();
-
-let Textbox = result.Textbox;
-let Form = result.Form;
-let username = new Textbox("#username",/[^a-zA-Z0-9]/);
-let password = new Textbox("#password",/[^a-zA-Z]/);
-username.value = "username";
-password.value = "password2";
-let form = new Form(username,password);
-form.attach("#root");
