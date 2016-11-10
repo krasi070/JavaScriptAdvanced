@@ -1,5 +1,9 @@
 export class DOMElement {
     constructor(label, selector) {
+        if (new.target === DOMElement) {
+            throw new TypeError('DOMElement is an abstract class!');
+        }
+
         this._label = label;
         this._selector = selector;
     }
